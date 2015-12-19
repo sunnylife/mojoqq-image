@@ -22,7 +22,7 @@ my $qq = 329379172;
 
 my $client=Mojo::Webqq->new(
 ua_debug    =>  0,         #是否打印详细的debug信息
-log_level   => "info",     #日志打印级别
+log_level   => "debug",     #日志打印级别
 qq          =>  $qq,       #登录的qq帐号
 login_type  =>  "qrlogin", #"qrlogin"表示二维码登录
 );
@@ -30,14 +30,14 @@ login_type  =>  "qrlogin", #"qrlogin"表示二维码登录
 #注意: 腾讯可能已经关闭了帐号密码的登录方式，这种情况下只能使用二维码扫描登录
 
 #发送二维码到邮箱
-#$client->load("PostQRcode",data=>{
-#smtp    =>  'smtp.xxx.com', #邮箱的smtp地址
-#port    =>  '25', #smtp服务器端口，默认25
-#from    =>  'xxx@xxx.com', #发件人
-#to      =>  'xxx@xxx.com', #收件人
-#user    =>  'xxx@xxx.com', #smtp登录帐号
-#pass    =>  'xxxxx', #smtp登录密码
-#});
+$client->load("PostQRcode",data=>{
+smtp    =>  'smtp.163.com', #邮箱的smtp地址
+port    =>  '25', #smtp服务器端口，默认25
+from    =>  '15201238838@163.com', #发件人
+to      =>  '329379172@qq.com', #收件人
+user    =>  '15201238838@163.com', #smtp登录帐号
+pass    =>  'wangwenhao', #smtp登录密码
+});
 #客户端进行登录
 $client->login();
 
