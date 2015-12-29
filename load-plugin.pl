@@ -58,7 +58,7 @@ $client->load("ShowMsg");
 #$client->load("FuckDaShen");
 
 #创建知识库
-$client->load("KnowledgeBase");
+#$client->load("KnowledgeBase");
 #示例：learn 今天天气怎么样  天气很好
 #      学习  "你吃了吗"      当然吃了
 #      learn '哈哈 你真笨'   "就你聪明"
@@ -66,15 +66,15 @@ $client->load("KnowledgeBase");
 #       删除  '哈哈 你真笨'
 
 #翻译
-$client->load("Translation");
+#$client->load("Translation");
 #示例：翻译 hello
 
 #手机归属地查询
-$client->load("MobileInfo");
+#$client->load("MobileInfo");
 #示例：手机 1888888888
 
 #代码测试
-$client->load("ProgramCode");
+#$client->load("ProgramCode");
 #示例：code|c>>>
 #        #include <stdio.h>
 #        int main() {
@@ -83,13 +83,13 @@ $client->load("ProgramCode");
 #        }
 
 #股票查询
-$client->load("StockInfo");
+#$client->load("StockInfo");
 #示例：股票 000001
 
 #提供HTTP API接口，方便获取客户端帐号、好友、群、讨论组信息
 #以及通过接口发送和接收好友消息、群消息、群临时消息和讨论组临时消息
 $client->load("Openqq",data=>{
-    listen => [ {host=>"127.0.0.1",port=>5000}, ] , #监听的地址和端口，支持多个
+#    listen => [ {host=>"127.0.0.1",port=>5000}, ] , #监听的地址和端口，支持多个
     #auth   => sub {my($param,$controller) = @_},    #可选，认证回调函数，用于进行请求鉴权
     post_api => 'http://tbtool/tool/webqq',                      #可选，设置接收消息的上报接口
 });
