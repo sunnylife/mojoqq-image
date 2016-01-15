@@ -16,7 +16,7 @@ use Mojo::Webqq;
 #
 ##推荐手机安装[QQ安全中心]APP，方便随时掌握自己帐号的情况
 #
-my $qq = 329379172;
+my $qq = $ENV{QQ};
 #
 ##初始化一个客户端对象，设置登录的qq号
 #
@@ -31,12 +31,12 @@ login_type  =>  "qrlogin", #"qrlogin"表示二维码登录
 #
 ##发送二维码到邮箱
 $client->load("PostQRcode",data=>{
-smtp    =>  'smtp.163.com', #邮箱的smtp地址
-port    =>  '25', #smtp服务器端口，默认25
-from    =>  '15201238838@163.com', #发件人
-to      =>  '329379172@qq.com', #收件人
-user    =>  '15201238838@163.com', #smtp登录帐号
-pass    =>  'wangwenhao', #smtp登录密码
+smtp    =>  $ENV{MAIL_HOST}, #邮箱的smtp地址
+port    =>  $ENV{MAIL_POST}, #smtp服务器端口，默认25
+from    =>  $ENV{MAIL_USER}, #发件人
+to      =>  $ENV{MAIL_TOUSER}, #收件人
+user    =>  $ENV{MAIL_USER}, #smtp登录帐号
+pass    =>  $ENV{MAIL_PASS}, #smtp登录密码
 });
 #
 ##客户端进行登录
@@ -71,7 +71,7 @@ $client->load("ShowMsg");
 ##示例：翻译 hello
 #
 ##手机归属地查询
-$client->load("MobileInfo");
+#$client->load("MobileInfo");
 ##示例：手机 1888888888
 #
 ##代码测试
@@ -92,7 +92,7 @@ $client->load("MobileInfo");
 $client->load("Openqq",data=>{
     #listen => [ {host=>"127.0.0.1",port=>5000}, ] , #监听的地址和端口，支持多个
         #auth   => sub {my($param,$controller) = @_},    #可选，认证回调函数，用于进行请求鉴权
-        post_api => 'http://123.57.144.6/tool/webqq',                      #可选，设置接收消息的上报接口
+        post_api => 'http://tbtool/tool/webqq',                      #可选，设置接收消息的上报接口
 });
 #
 #            #客户端开始运行
