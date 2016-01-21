@@ -92,7 +92,7 @@ $client->load("ShowMsg");
 $client->load("Openqq",data=>{
     #listen => [ {host=>"127.0.0.1",port=>5000}, ] , #监听的地址和端口，支持多个
         #auth   => sub {my($param,$controller) = @_},    #可选，认证回调函数，用于进行请求鉴权
-        post_api => 'http://tbtool/tool/webqq',                      #可选，设置接收消息的上报接口
+        post_api => $ENV{POST_API},                      #可选，设置接收消息的上报接口
 });
 #
 #            #客户端开始运行
