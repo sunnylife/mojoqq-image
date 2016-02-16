@@ -32,7 +32,7 @@ login_type  =>  "qrlogin", #"qrlogin"表示二维码登录
 ##发送二维码到邮箱
 $client->load("PostQRcode",data=>{
 smtp    =>  $ENV{MAIL_HOST}, #邮箱的smtp地址
-port    =>  $ENV{MAIL_POST}, #smtp服务器端口，默认25
+port    =>  $ENV{MAIL_PORT}, #smtp服务器端口，默认25
 from    =>  $ENV{MAIL_USER}, #发件人
 to      =>  $ENV{MAIL_TOUSER}, #收件人
 user    =>  $ENV{MAIL_USER}, #smtp登录帐号
@@ -52,7 +52,7 @@ $client->load("ShowMsg");
 ##$client->load("Perldoc");
 #
 ##智能聊天回复
-$client->load("SmartReply");
+#$client->load("SmartReply");
 ##需要私聊或@机器人
 #
 ##对大神进行鄙视
