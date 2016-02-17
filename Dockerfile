@@ -15,3 +15,5 @@ ADD main.pl main.pl
 RUN cpanm -v MIME::Lite
 RUN cpanm -v Mojo::SMTP::Client
 CMD ["perl","main.pl"]
+
+EXPOSE 80
