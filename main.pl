@@ -52,7 +52,7 @@ $client->load("ShowMsg");
 ##$client->load("Perldoc");
 #
 ##智能聊天回复
-#$client->load("SmartReply");
+$client->load("SmartReply");
 ##需要私聊或@机器人
 #
 ##对大神进行鄙视
